@@ -1,0 +1,41 @@
+/*.my_containerFluid {
+    height: 100vh;
+}
+*/
+
+.my_upContainer {
+    height: 20vh;
+}
+
+.my_downContainer {
+    height: 80vh;
+
+}
+.my_chatbox {
+    z-index: 10;
+    position: absolute;
+    top: 1rem;
+    left: 8rem;
+    height: 95vh;
+    background-color: bisque;
+}
+
+.my_height1 {
+    height: 5vh;
+}
+
+.my_height2 {
+    height: 6vh;
+}
+
+.my_height3 {
+    height: 4vh;
+}
+
+.my_height4 {
+    height: 80vh;
+}
+
+.my_main {
+    height:85vh;
+}

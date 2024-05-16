@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,23 +19,62 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <div id="app">
-        <div class="container">
+        <div class="container-fluid my_containerFluid">
             <div class="row">
-                <div class="col-12 h-25 bg-success">
-                    ciao
+                <div class="col-12 my_upContainer bg-success">
+
                 </div>
-                <div class="col-12 h-75 bg-body-secondary">
-                        ciao
+                <div class="col-12 my_downContainer bg-body-secondary">
+
                 </div>
             </div>
+        </div>
+        <!---- Container chat--->
+        <div class="container col-10 my_chatbox">
+            <div class="row">
+                <div class="col-4  bg-primary">
+                    <div class="row">
+                        <div class="col-12 p-1 bg-body-secondary my_height1">
+                            chat
+                        </div>
+                        <div class="col-12 bg-primary my_height2">
+                            notifiche
+                        </div>
+                        <div class="col-12 bg-warning my_height3">
+                            Cerca
+                        </div>
+                        <div class="col-12 bg-body-tertiary my_height4">
+                            Conversazioni
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-12 bg-warning my_height1">
+                            chat
+                        </div>
+                        <div class="col-12 my_main bg-info">
+                            main
+                        </div>
+                        <div class="col-12 my_height1 bg-secondary">
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
         </div>
 
     </div>
 
     <script src="main.js"></script>
 </body>
+
 </html>
