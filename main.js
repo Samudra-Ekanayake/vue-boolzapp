@@ -172,6 +172,7 @@
         ],
 
         chatSelezionata: 0,
+        nuovoMessaggio: "",
         
       }
     },
@@ -183,7 +184,29 @@
             this.chatSelezionata = indice
         },
 
+        invioMessaggio() {
+
+            if(this.nuovoMessaggio == "")
+                return;
+
+            this.contacts[this.chatSelezionata].messages.push({
+                date: new Date() .toLocaleString(),
+                message: this.nuovoMessaggio,
+                status: "sent"
+            });
+
+            this.nuovoMessaggio = "";
+
+            setTimeout(() => {
+                this.contacts[this.chatSelezionata].messages.push({
+                    date: new Date() .toLocaleString(),
+                    message: "ok",
+                    status: "received"
+                })          
+            }, 2000);
+        },
+
        
-    }
+    },
 
   }).mount('#app')
