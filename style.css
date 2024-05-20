@@ -1,14 +1,19 @@
-/*.my_containerFluid {
-    height: 100vh;
+.my_fontSize1 {
+    font-size: 14px;
 }
-*/
+
+.my_fontSize2 {
+    font-size: 12px;
+}
 
 .my_upContainer {
     height: 20vh;
+    background-color: rgb(0, 150, 136);
 }
 
 .my_downContainer {
     height: 80vh;
+    background-color: rgb(214, 219, 217);
 
 }
 .my_chatbox {
@@ -22,14 +27,22 @@
 
 .my_height1 {
     height: 5vh;
+    background-color: rgb(234, 234, 234);
+}
+
+.my_height1 img {
+    height: 2rem;
+    border-radius: 50%;
 }
 
 .my_height2 {
     height: 6vh;
+    background-color: rgb(142, 218, 252);
 }
 
 .my_height3 {
     height: 4vh;
+    background-color:  rgb(234, 234, 234);
 }
 
 .my_height4 {
@@ -38,4 +51,20 @@
 
 .my_main {
     height:85vh;
+    background-image: url(img/mine.jpg);
 }
+
+.my_img img {
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.my_input1 {
+    height: 2rem;
+    font-size: 12px;
+}
+
+.my_colorGrey {
+    color: grey;
+}
+
