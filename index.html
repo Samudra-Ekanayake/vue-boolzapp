@@ -24,61 +24,62 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <div id="app">
-        <div class="container-fluid my_containerFluid">
+        <div class="container-fluid st_containerFluid">
             <div class="row">
-                <div class="col-12 my_upContainer">
+                <div class="col-12 st_upContainer">
 
                 </div>
-                <div class="col-12 my_downContainer">
+                <div class="col-12 st_downContainer">
 
                 </div>
             </div>
         </div>
         <!---- Container chat--->
-        <div class="container col-10 my_chatbox">
+        <div class="container col-10 st_chatbox">
             <div class="row">
                 <div class="col-4  bg-primary">
                     <div class="row">
                         <div
-                            class="col-12 p-1 my_height1 d-flex align-items-center justify-content-between my_fontSize2">
+                            class="col-12 p-1 st_height1 d-flex align-items-center justify-content-between st_fontSize2">
                             <div class="col-1 d-flex align-items-center">
                                 <img src="img/avatar_io.jpg" alt="">
                                 <span>Sofia</span>
                             </div>
-                            <div class="col-2 d-flex align-items-center justify-content-around my_colorGrey">
+                            <div class="col-2 d-flex align-items-center justify-content-around st_colorGrey">
                                 <i class="fa-solid fa-circle-notch"></i>
                                 <i class="fa-solid fa-message"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
 
                         </div>
-                        <div class="col-12 my_height2 d-flex align-items-center">
+                        <div class="col-12 st_height2 d-flex align-items-center">
                             <div class="mx-2">
                                 <i class="fa-solid fa-bell-slash"></i>
                             </div>
                             <div class="">
-                                <span class="my_fontSize1">Ricevi notifiche di nuovi messaggi</span>
-                                <p class="my_fontSize2 m-0">Attiva notifiche Desktop</p>
+                                <span class="st_fontSize1">Ricevi notifiche di nuovi messaggi</span>
+                                <p class="st_fontSize2 m-0">Attiva notifiche Desktop</p>
                             </div>
                         </div>
-                        <div class="col-12 my_height3 d-flex justify-content-start p-0">
+                        <div class="col-12 st_height3 d-flex justify-content-start p-0">
                             <div class="input-group flex-nowrap ">
-                                <span class="input-group-text bg-white my_input1" id="addon-wrapping"><i
+                                <span class="input-group-text bg-white st_input1" id="addon-wrapping"><i
                                         class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control my_input1" placeholder="Username"
+                                <input type="text" class="form-control st_input1" placeholder="Username"
                                     aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                         </div>
-                        <div class="col-12 bg-body-tertiary my_height4 overflow-auto">
-                            <ul class="list-unstyled my_img">
-                                <li class="p-2 border-bottom" v-for="element in contacts">
+                        <div class="col-12 bg-body-tertiary st_height4 overflow-auto">
+                            <ul class="list-unstyled st_img">
+                                <li class="p-2 border-bottom" @click="selezionaContatto (i)"
+                                    v-for="element, i in contacts">
                                     <div class="d-flex justify-content-start">
                                         <div>
                                             <img :src="element.avatar" alt="">
                                         </div>
                                         <div>
-                                            <span class="my_fonSize1">{{element.name}}</span>
-                                            <p class="my_fontSize2 my_colorGrey">Ultimo messaggio inviato</p>
+                                            <span class="st_fonSize1">{{element.name}}</span>
+                                            <p class="st_fontSize2 st_colorGrey">Ultimo messaggio inviato</p>
                                         </div>
                                     </div>
                                 </li>
@@ -89,26 +90,35 @@
                 <!------Right side-->
                 <div class="col-8">
                     <div class="row">
-                        <div class="col-12 my_height1 d-flex justify-content-between align-items-center">
+                        <div class="col-12 st_height1 d-flex justify-content-between align-items-center">
                             <div class="col-3 d-flex align-items-center">
                                 <img src="img/avatar_1.jpg" alt="">
-                                <span>Michele</span>                           
+                                <span>Michele</span>
                             </div>
-                            <div class="col-2 d-flex align-items-center justify-content-around my_colorGrey">
+                            <div class="col-2 d-flex align-items-center justify-content-around st_colorGrey">
                                 <i class="fa-solid fa-circle-notch"></i>
                                 <i class="fa-solid fa-message"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>              
+                            </div>
                         </div>
-                        <div class="col-12 my_main bg-info">
-                            
+
+                        <!-----Chat box-->
+                        <div class="col-12 st_main">
+                            <div v-for="messaggio in contacts[chatSelezionata].messages"
+                                :class="{'text-end': messaggio.status === 'sent', 'text-start' : messaggio.status === 'received'}">
+                                <div :class="{'ricevuti' : messaggio.status === 'received', 'inviati' : messaggio.status === 'sent'}">
+                                    {{messaggio.message}}
+                                    <br>
+                                    <small class="st_date">{{messaggio.date}}</small>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 my_height1 d-flex justify-content-between align-items-center text-center">
+                        <div class="col-12 st_height1 d-flex justify-content-between align-items-center text-center">
                             <div class="col-1">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
                             <div class="col-10">
-                                <input type="text" placeholder="Scrivi un messaggio" class="w-100 my_input1 border-0">
+                                <input type="text" placeholder="Scrivi un messaggio" class="w-100 st_input1 border-0">
                             </div>
                             <div class="col-1">
                                 <i class="fa-solid fa-microphone"></i>

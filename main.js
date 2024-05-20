@@ -169,12 +169,21 @@
                     }
                 ],
             }
-        ]
-        
-        
-        
-        
+        ],
+
+        chatSelezionata: 0,
         
       }
+    },
+
+    methods: {
+
+        selezionaContatto (indice) {
+            console.log("hai cliccato", indice);
+            this.chatSelezionata = indice
+        },
+
+       
     }
+
   }).mount('#app')
