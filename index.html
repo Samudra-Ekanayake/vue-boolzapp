@@ -65,11 +65,12 @@
                             <div class="input-group flex-nowrap ">
                                 <span class="input-group-text bg-white st_input1" id="addon-wrapping"><i
                                         class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control st_input1" placeholder="Username"
-                                    aria-label="Username" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control st_input1" placeholder="Cerca"
+                                    aria-label="Username" aria-describedby="addon-wrapping" v-model="searchQuery">
                             </div>
                         </div>
-                        <div class="col-12 bg-body-tertiary st_height4 overflow-auto">
+                        <!-----Conversazioni----->
+                        <div class="col-12 bg-body-tertiary st_height4 p-0 overflow-auto">
                             <ul class="list-unstyled st_img">
                                 <li class="p-2 border-bottom" @click="selezionaContatto (i)"
                                     v-for="element, i in contacts">
@@ -103,10 +104,11 @@
                         </div>
 
                         <!-----Chat box-->
-                        <div class="col-12 st_main">
+                        <div class="col-12 st_main overflow-auto">
                             <div v-for="messaggio in contacts[chatSelezionata].messages"
                                 :class="{'text-end': messaggio.status === 'sent', 'text-start' : messaggio.status === 'received'}">
-                                <div :class="{'ricevuti' : messaggio.status === 'received', 'inviati' : messaggio.status === 'sent'}">
+                                <div
+                                    :class="{'ricevuti' : messaggio.status === 'received', 'inviati' : messaggio.status === 'sent'}">
                                     {{messaggio.message}}
                                     <br>
                                     <small class="st_date">{{messaggio.date}}</small>
@@ -118,7 +120,8 @@
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
                             <div class="col-10">
-                                <input type="text" placeholder="Scrivi un messaggio" v-model="nuovoMessaggio" @keyup.enter="invioMessaggio" class="w-100 st_input1 border-0">
+                                <input type="text" placeholder="Scrivi un messaggio" v-model="nuovoMessaggio"
+                                    @keyup.enter="invioMessaggio" class="w-100 st_input1 border-0">
                             </div>
                             <div class="col-1">
                                 <i class="fa-solid fa-microphone"></i>

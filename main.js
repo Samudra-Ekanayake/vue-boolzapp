@@ -173,7 +173,7 @@
 
         chatSelezionata: 0,
         nuovoMessaggio: "",
-        
+        searchQuery: "",
       }
     },
 
@@ -203,10 +203,17 @@
                     message: "ok",
                     status: "received"
                 })          
-            }, 2000);
+            }, 1000);
         },
+    },
 
-       
+    computed: {
+        filteredNames() {
+            if(!this.searchQuery) return this.contacts;
+            return this.contacts.filter(person =>{
+                return person.name.toLowerCase() .includes(this.searchQuery.toLowerCase());
+            });
+        }
     },
 
   }).mount('#app')

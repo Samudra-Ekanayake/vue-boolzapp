@@ -52,6 +52,7 @@
 .st_main {
     height:85vh;
     background-image: url(img/mine.jpg);
+    padding-top: 0.5rem;
 }
 
 .st_img img {
@@ -69,7 +70,7 @@
 }
 
 .inviati {
-    background-color: aquamarine;
+    background-color: rgb(213, 249, 186);
     max-width: 50%;
     margin-right: 1rem;
     margin-left: auto;
